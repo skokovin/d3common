@@ -72,3 +72,19 @@ pub struct InpSinglePartDb {
     pub occ_a13: Option<f64>, pub occ_a23: Option<f64>, pub occ_a33: Option<f64>,
     pub occ_a14: Option<f64>, pub occ_a24: Option<f64>, pub occ_a34: Option<f64>,
 }
+
+pub fn encoded_part (my_part:&InpSinglePartDb)-> Vec<u8>{
+    postcard::to_allocvec(my_part).unwrap()
+}
+
+pub fn decodeded_part (bin:&Vec<u8>)-> InpSinglePartDb{
+    postcard::from_bytes(bin).unwrap()
+}
+
+pub fn encoded_parts(parts: &[InpSinglePartDb]) -> Vec<u8> {
+    postcard::to_allocvec(parts).unwrap()
+}
+
+pub fn decoded_parts(bin: &[u8]) -> Vec<InpSinglePartDb> {
+    postcard::from_bytes(bin).unwrap()
+}
