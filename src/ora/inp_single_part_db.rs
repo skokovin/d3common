@@ -71,6 +71,7 @@ pub struct InpSinglePartDb {
     pub occ_a12: Option<f64>, pub occ_a22: Option<f64>, pub occ_a32: Option<f64>,
     pub occ_a13: Option<f64>, pub occ_a23: Option<f64>, pub occ_a33: Option<f64>,
     pub occ_a14: Option<f64>, pub occ_a24: Option<f64>, pub occ_a34: Option<f64>,
+    pub symmetry: Option<i64>,
 }
 
 pub fn encoded_part (my_part:&InpSinglePartDb)-> Vec<u8>{
